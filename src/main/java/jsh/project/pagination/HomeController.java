@@ -1,4 +1,4 @@
-package jsh.project.paginasion;
+package jsh.project.pagination;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -30,9 +30,7 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
 		model.addAttribute("serverTime", formattedDate );
-		
 		return "home";
 	}
 	
