@@ -1,6 +1,7 @@
 package jsh.project.pagination.board.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -20,7 +21,7 @@ public class ArticleRepository {
 		return 0;
 	}
 	
-	public List<Article> list(int page){
+	public List<Article> list(Map<String, Integer> paramMap){
 		return null;
 	}
 

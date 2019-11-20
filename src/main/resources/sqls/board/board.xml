@@ -2,4 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">	
 
+	<resultMap id="ArticleResultMap" type="Article">
+		<result property="id" column="article_id"/>
+		<result property="writer" column="writer"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="regDate" column="reg_date" />
+	</resultMap>
+
+	<select id = "totalCount" parameterType="map" resultType="int">
+		
+	</select>
+	
+	<select id="list" parameterType="map" resultMap="ArticleResultMap">
+		
+	</select>
+
 </mapper>

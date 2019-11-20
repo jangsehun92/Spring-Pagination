@@ -1,11 +1,12 @@
 package jsh.project.pagination.board.service;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import jsh.project.pagination.board.dao.ArticleRepository;
-import jsh.project.pagination.board.dto.Article;
+import jsh.project.pagination.util.Pagination;
 
 @Service
 public class BoardService {
@@ -20,8 +21,17 @@ public class BoardService {
 		return articleRepository.totalCount();
 	}
 	
-	public List<Article> articleList(int countList, int page){
-		return articleRepository.list(page); 
+	public Map<String, Object> articleList(int page){
+		Map<String, Integer> paramMap = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
+		int totalCount = totalCount(); //게시판의 총 게시글의 수
+		Pagination pagination = new Pagination(totalCount, page);
+		paramMap.put("countList", pagination.getCountList());
+		paramMap.put("page", page);
+		
+		resultMap.put("pagination",pagination);
+		resultMap.put("articleList",articleRepository.list(paramMap));
+		return resultMap; 
 	}
 
 }
