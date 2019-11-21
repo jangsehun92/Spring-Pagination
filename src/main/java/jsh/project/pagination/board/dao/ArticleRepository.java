@@ -18,11 +18,11 @@ public class ArticleRepository {
 	}
 	
 	public int totalCount() {
-		return 0;
+		return sqlSession.selectOne("boardMapper.totalCount");
 	}
 	
 	public List<Article> list(Map<String, Integer> paramMap){
-		return null;
+		return sqlSession.selectList("boardMapper.list", paramMap);
 	}
 
 }

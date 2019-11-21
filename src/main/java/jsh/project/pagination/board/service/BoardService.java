@@ -10,7 +10,6 @@ import jsh.project.pagination.util.Pagination;
 
 @Service
 public class BoardService {
-	
 	private ArticleRepository articleRepository;
 	
 	public BoardService(ArticleRepository articleRepository) {
@@ -22,15 +21,10 @@ public class BoardService {
 	}
 	
 	public Map<String, Object> articleList(int page){
-		Map<String, Integer> paramMap = new HashMap<>();
 		Map<String, Object> resultMap = new HashMap<>();
-		int totalCount = totalCount(); //게시판의 총 게시글의 수
-		Pagination pagination = new Pagination(totalCount, page);
-		paramMap.put("countList", pagination.getCountList());
-		paramMap.put("page", page);
-		
-		resultMap.put("pagination",pagination);
-		resultMap.put("articleList",articleRepository.list(paramMap));
+		Pagination pagination = new Pagination(totalCount(), page);
+		resultMap.put("pagination",pagination); 
+		resultMap.put("articleList",articleRepository.list(pagination.scope()));
 		return resultMap; 
 	}
 
