@@ -5,6 +5,10 @@ Spring에서 게시물 페이징 처리
 
 * 페이징이란?
   * 게시글을 한번에 다보여주는 것이 아닌 원하는 만큼만 보여주기 위한 방법
+  
+  ![board_pagination](https://user-images.githubusercontent.com/55639153/69460168-ccd5e400-0db6-11ea-83b8-f385c5ac906c.jpeg)
+> > -css는 부트스트랩을 사용
+
 
  * 과정
 1. 사용자가 서버에 요청(페이지 요청)
