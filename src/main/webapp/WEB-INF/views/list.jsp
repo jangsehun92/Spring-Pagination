@@ -73,7 +73,7 @@ $(function(){
 					<c:forEach items="${resultMap.articleList }" var="article">
 						<tr>
 							<td> ${article.id }</td>
-							<td><a href="/article/${article.id }">${article.title }</a></td>
+							<td>${article.title }</td>
 							<td align="right">${article.writer }</td>
 							<td align="right">${article.regDate }</td>
 						</tr>
