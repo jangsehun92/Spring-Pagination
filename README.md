@@ -9,6 +9,10 @@ Spring에서 게시물 페이징 처리
   ![board_pagination](https://user-images.githubusercontent.com/55639153/69460168-ccd5e400-0db6-11ea-83b8-f385c5ac906c.jpeg)
 >  css는 부트스트랩을 사용
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 
  * 과정
 1. 사용자가 서버에 요청(페이지 요청)
